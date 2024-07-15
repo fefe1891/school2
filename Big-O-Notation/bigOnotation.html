@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment: Big O Notation</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 90%;
+        }
+        h1, h2, h3, p, pre {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>Big-O Notation Practice</h2>
+
+<h3>Simplifying Expressions</h3>
+<table>
+    <tr>
+        <th>Expression</th>
+        <th>Simplified</th>
+    </tr>
+    <tr>
+        <td>O(n + 10)</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>O(100 * n)</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>O(25)</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>O(n^2 + n^3)</td>
+        <td>O(n^3)</td>
+    </tr>
+    <tr>
+        <td>O(n + n + n + n)</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>O(1000 * log(n) + n)</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>O(1000 * n * log(n) + n)</td>
+        <td>O(n * log(n))</td>
+    </tr>
+    <tr>
+        <td>O(2^n + n^2)</td>
+        <td>O(2^n)</td>+
+    </tr>
+    <tr>
+        <td>O(5 + 3 + 1)</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>O(n + n^(1/2) + n^2 + n * log(n)^10)</td>
+        <td>O(n^2)</td>
+    </tr>
+</table>
+
+<h1>Calculating Time Complexity</h1>
+<h2>Question 1</h2>
+<p>What is the time complexity of the following functions?</p>
+<pre>function logUpTo(n) {
+  for (let i = 1; i <= n; i++) {
+   console.log(i);
+  }
+}</pre>
+    <h2>Answer</h2>
+    <p>O(n)</p>
+<pre>function logAtLeast10(n) {
+  for (let i = 1; i <= Math.max(n, 10); i++) {
+    console.log(i);
+  }
+}</pre>
+    <h2>Answer</h2>
+    <p>O(n)</p>
+<pre>function logAtMost10(n) {
+  for (let i = 1; i <= Math.min(n, 10); i++) {
+    console.log(i);
+  }
+}</pre>
+    <h2>Answer</h2>
+    <p>O(1)</p>
+<pre>function onlyElementsAtEvenIndex(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}</pre>
+    <h2>Answer</h2>
+    <p>O(n)</p>
+<pre>function subtotals(array) {
+  let subtotalArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let subtotal = 0;
+    for (let j = 0; j <= i; j++) {
+      subtotal += array[j];
+    }
+    subtotalArray.push(subtotal);
+  }
+  return subtotalArray;
+}</pre>
+    <h2>Answer</h2>
+    <p>O(n^2)</p>
+<pre>function vowelCount(str) {
+  let vowelCount = {};
+  const vowels = "aeiouAEIOU";
+
+  for (let char of str) {
+    if(vowels.includes(char)) {
+      if(char in vowelCount) {
+        vowelCount[char] += 1;
+      } else {
+        vowelCount[char] = 1;
+      }
+    }
+  }
+
+  return vowelCount;
+}</pre>
+    <h2>Answer</h2>
+    <p>O(n)</p>
+
+<table>
+    <tr>
+        <th>Expression</th>
+        <th>True/False</th>
+    </tr>
+    <tr>
+        <td> n^2 + n is O(n^2).</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>n^2 * n is O(n^3).</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td> n^2 + n is O(n).</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .indexOf array method?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .includes array method?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .forEach array method?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .sort array method?</td>
+        <td>O(n log n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .unshift array method?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .push array method?</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .splice array method?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the .pop array method?</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>What’s the time complexity of the Object.keys() function?</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>BONUS:What’s the space complexity of the Object.keys() function?</td>
+        <td>O(n)</td>
+    </tr>
+</table>
+</body>
+</html>
