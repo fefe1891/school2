@@ -1,0 +1,36 @@
+/* Navigation bar */
+
+nav {
+      display: flex;
+      background-color: #ff6600;
+      align-items: center;
+      padding: 5px 20px;
+      border-radius: 3px 3px 0 0;
+  }
+  
+  .navbar-brand, .nav-right {
+      display: flex;
+      align-items: center;
+  }
+  
+  .navbar-brand {
+      font-weight: bold;
+      justify-content: flex-start;
+      width: 100%;
+  }
+  
+  .nav-link-left:not(:last-child)::after {
+      content: "|";
+      margin-left: 3px;
+  }
+  
+  .nav-link {
+      font-size: 0.85rem;
+      margin: 0 3px;
+  }
+  
+  .nav-right {
+      margin-left: auto;
+      text-align: right;
+  }
+  
