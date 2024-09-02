@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Terminology</title>
+</head>
+<body>
+<h1>Web Terminology</h1>
+
+<h2>Part One: Solidify Terminology</h2>
+
+<h3>1. What is HTTP?</h3>
+<p>Hypertext Transfer Protocol. It is a protocol for transferring data across the web.
+   This can be anything from HTML documents,javaScript files, css stylesheets, images
+   and more. HTTP allows for communication between different systems, generally a server
+   and browser. Each request is independently processed without knowledge of prior requests.
+</p>
+
+<h3>2. What is a URL?</h3>
+<p>Uniformed Resource Locator (url) is a reference or address that states a location of a resource
+   like a web page on the internet. It carries the protocol needed to fetch the resource.
+   Urls consist of standardized format that has several parts.
+</p>
+
+<h3>3. What is DNS?</h3>
+<p>DNS or Domain Name System is a crucial component of the internet's infrastructure, like a phone book
+   for the internet. When we are surfing the web the DNS translates domain names within the url like
+   'yahoo.com' to an IP address allowing our browser to load requested resource known as DNS resolution.</p>
+
+<h3>4. What is a query string?</h3>
+<p>A query string is indicated with a question mark and is located inside the URL. It generally specifies
+   certain conditions or provides additional data for the HTTP request. It consists of a series of parameter-value
+   pairs that are separated by an ampersand. It allows for passing specific information to a web server.</p>
+
+<h3>5. What are two HTTP verbs and how are they different?</h3>
+<p>GET and POST are two HTTP methods (or verbs). Verbs define an action to be performed on specified resource. There
+   are many methods (or verbs) but we are focusing on GET and POST.
+
+   GET: retrieves data from a server. When you type a URL into a browser and hit search, a GET request is being sent
+   to a server from your browser. One key point is GET request should not change the state of the server being "safe".
+   Meaning they do not modify any data and are used for read-only purposes.
+
+   POST: sends data to a server to create/update a resource. The POST is placed within the body of a request, which will
+   not be visible in URL. Unlike the GET verb that does not change the server state; POST does as it is used to update an
+   existing resource or create a new one.</p>
+
+<h3>6. What is an HTTP request?</h3>
+<p>An HTTP request is made from a client to a web server to obtain a specific action on a requested resource.</p>
+
+<h3>7. What is an HTTP response?</h3>
+<p>An HTTP response is made by the server to the client. It informs the client on the status of the request made.</p>
+
+<h3>8. What is an HTTP header? Give a couple examples of request and response headers you have seen.</h3>
+<p>An HTTP header is used by either client or server to pass additional information between the two during the request/
+   response cycle. Headers come in a variety of types and appear in both request and response. It's a way pass information
+   between the two.
+
+   Example request:
+   Get /erik.price.75 HTTP/1.1
+   Host: www.facebook.com
+   User-Agent: Chrome/91.0.4472.124
+   Accept-Language: it-IT, it;q=0.9, en;q=0.8
+
+   Example request 2:
+   GET /community-1 HTTP/1.1
+   Host: springboard-2784014.hs-sites.com
+   User-Agent: Chrome/91.0.4472.124
+   Accept-Language: it-IT, it;q=0.9, en;q=0.8
+
+   Example response:
+   HTTP/1.1 200 OK
+   Server: Apache/2.4.1 (unix)
+   Last-Modified: Mon, 02 May 2022 12:45:26 GMT
+   Content-Language: it
+   Content-Type: text/html;
+   charset=UTF-8
+   Connection: close
+
+   Example response 2:
+   HTTP/1.1 200 OK
+   Date: Mon, 06 July 2024 16:01:05 GMT
+   Server: Apache/2.4.1 (Unix)
+   Last-Modified: Mon, 06 July 2024 12:30:20 GMT
+   Content-Language: it
+   Content-Type: text/html;
+   charset=UTF-8
+   Connection: close
+</p>
+
+<h3>9. What are the processes that happen when you type "http://somesite.com/some/page.html" into a browser?</h3>
+
+<ul>
+      <li><strong>URL parsing:</strong> The URL gets parsed to identify the "http".</li>
+     <li><strong>DNS Lookup:</strong> The browser connects to a DNS server to translate the domain name to the ip address.</li>
+     <li><strong>TCP Connection:</strong> A protocol used to deliver a request from client to server. Your browser will establish a connection
+     with the server and carry out above protocol.</li>
+     <li><strong>HTTP Request:</strong> A browser sends an HTTP GET request to a server.</li>
+     <li><strong>Server Response:</strong> The server reacts to HTTP request. The server then sends back file content back to the browser in
+     HTTP response. If it is successful you can get a response with "200 OK" and if it is not than you can get "404 Not
+     Found".</li>
+     <li><strong>Rendering the Page:</strong> Once the requested webpage has been received the browser then starts making available the HTML code.
+     It can send additional HTTP requests for whatever the webpage requires like images, JavaScript files, CSS files, etc.</li>
+     <li><strong>Closing the Connection:</strong> After the request has been completely loaded the browser closes the TCP connection. In some
+     instances the connection is kept open to fetch other resources or cater to more request to server.</li>
+  </ul>
+</body>
+</html>
