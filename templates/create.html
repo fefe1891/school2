@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Create a new story</h1>
+<form method="post">
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Prompts (comma-separated)</label>
+    <input type="text" name="prompts">
+    <label>Story Template</label>
+    <textarea name="template"></textarea>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

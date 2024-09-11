@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Madlibs-Form!</h1>
+<form method="POST" action="/story">
+  <!-- include story id as a hidden input -->
+  <input type="hidden" name="story_id" value="{{story_id}}">
+  <!-- for each prompt, make a corresponding input field -->
+  {% for prompt in prompts %}
+  <label for="{{prompt}}">{{prompt.capitalize()}}:</label>
+  <input type="text" id="{{prompt}}" name="{{prompt}}"><br>
+  {% endfor %}
+  <button type="submit">Create Story</button>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='validate.js') }}"></script>
+{% endblock %}
