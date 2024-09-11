@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:focus {
+    outline: 2px dashed #7E7E7E; /*helps navigate to search bar easier*/
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    background: linear-gradient(to right, green, #FF0066);
+    overflow-x: hidden;
+    padding: 1em;
+}
+
+.page-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.heading-search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.main-content {
+    min-height: 600px; /*Specify a minimum height so the footer doesn't creep up the page in smaller viewports*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2; /*main content grows twice as much as flex siblings when there's extra space with default base size of 0*/
+    margin: auto;
+}
+
+#animated1, #animated2 {
+    flex-basis: 20%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex: 1;
+    margin: 1em;
+}
+#animated1 {
+    background-image: url('funny-pear.jpg'); /*including animated image in div*/
+}
+
+#animated2 {
+    background-image: url('surreal-fruit-studio.jpg');  /*including 2nd animated img*/
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0.5em;
+    width: 80%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-container, .images-container, #main-heading {
+    width: 100%;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    width: 100%;
+}
+.search-container input,
+.search-container .suggestions {
+    width: 50%;
+    border-radius: 5px;
+}
+.search-container input {
+    height: 3em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #CCC;
+    width: 100%;
+}
+.search-container .suggestions {
+    position: absolute;
+    top: 110%;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 100%;
+    background: white;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    transition: all 0.3s ease;
+}
+ul.has-suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+}
+ul li {
+    padding: 1em;
+    border-top: solid 1px #EEE;
+    cursor: pointer;
+}
+ul li:hover {
+    background: lightgray;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.8); /*change the background color when input is focused*/
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.images-container img {
+    margin: 0.5em;
+}
+
+html {
+    height: 100%;
+}
+
+footer { /*positions footer to bottom left*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+@media screen and(min-width: 1200px) {
+    body {
+        background-color: lightblue;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+    body {
+        background-color: darkolivegreen;
+    }
+}
+@media screen and (max-width: 700px) {
+    body {
+        background-color: lightcoral;
+    }
+}
